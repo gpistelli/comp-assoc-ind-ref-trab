@@ -1,0 +1,173 @@
+Dirigente;Sindicato;Funcao;ExpSet;FxKSoc;NivK;FatMEmp;TamMEmp;CidAt;NEmp;Form
+EAA;SIAPAR;Adm;;;;;;;;N/A
+ARGJ;SIAPAR;SP;N-ExpSet;0 a 99k;;até 240k;1-19 func;Mun;2 a 5;Cin
+RRMM;SIAPAR;SP;ExpSet;0 a 99k;;até 2,4M;20-99 func;PR;2 a 5;EngComp
+SO;SIAPAR;SP;N-ExpSet;100 a 999k;;até 240k;1-19 func;Mun;2 a 5;N.D.
+JL;SIAPAR;SP;N-ExpSet;100 a 999k;;até 2,4M;20-99 func;Mun;1;Com
+SP;SICEPOT;SP;ExpSet;0 a 99k;;2,4 a 10M;100-199 func;Mun;2 a 5;EngCiv
+JAPR;SICEPOT;SP;N-ExpSet;0 a 99k;;até 240k;1-19 func;Mun;2 a 5;EngCiv
+JJA;SICEPOT;SP;ExpSet;1 a 9,99M;;até 240k;1-19 func;BR;>10;EngCiv
+FCBG;SICEPOT;SP;N-ExpSet;1 a 9,99M;;até 2,4M;20-99 func;Mun;1;EngCiv
+JAGG;SICEPOT;SP;ExpSet;+ de 10M;;10 a 50M;>200 func;BR;>10;EngCiv
+ECJ;SICEPOT;SP;ExpSet;+ de 10M;;>50M;>200 func;Reg;>10;EngCiv
+CAL;SIGEP;SP;N-ExpSet;0 a 99k;;até 240k;1-19 func;Mun;1;N/A
+EB;SIGEP;SP;ExpSet;0 a 99k;;10 a 50M;>200 func;PR;2 a 5;N/A
+RAF;SIGEP;SP;N-ExpSet;0 a 99k;;até 240k;1-19 func;Mun;1;N/A
+LSS;SIGEP;SP;N-ExpSet;0 a 99k;;até 2,4M;1-19 func;Mun;1;N/A
+AOS;SIGEP;SP;N-ExpSet;0 a 99k;;até 2,4M;1-19 func;Mun;1;N/A
+MDN;SIGEP;SP;N-ExpSet;100 a 999k;;até 240k;1-19 func;Mun;1;N/A
+EFF;SIGEP;SP;N-ExpSet;100 a 999k;;10 a 50M;100-199 func;Mun;2 a 5;N/A
+JMPC;SIITEP;SP;N-ExpSet;0 a 99k;;até 240k;1-19 func;Mun;2 a 5;Adm
+BHAG;SIITEP;SP;ExpSet;100 a 999k;;até 2,4M;20-99 func;Mun;2 a 5;Econ
+JCMP;SIITEP;Adm+SP;ExpSet;100 a 999k;;até 2,4M;20-99 func;Mun;2 a 5;Adm
+RIFL;SIITEP;SP;N-ExpSet;1 a 9,99M;;10 a 50M;100-199 func;Sul;2 a 5;N/A
+HB;SIITEP;SP;ExpSet;+ de 10M;;>50M;>200 func;BR;>10;EngElet
+JVC;SIMADEIRA;SP;ExpSet;1 a 9,99M;;2,4 a 10M;100-199 func;BR;6 a 10;N/A
+AJDP;SIMADEIRA;SP;ExpSet;100 a 999k;;até 240k;1-19 func;BR;2 a 5;Adm
+DAGS;SIMADEIRA;SP;ExpSet;+ de 10M;;10 a 50M;>200 func;BR;>10;Econ
+RRN;SIMADEIRA;SP;ExpSet;+ de 10M;;>50M;>200 func;BR;6 a 10;EngCiv
+GBe;SIMADEIRA;SP;ExpSet;+ de 10M;+Sul;10 a 50M;>200 func;BR;>10;N/A
+RM;SIMADEIRA;SP;ExpSet;+ de 10M;KInt;10 a 50M;>200 func;BR;>10;Adm
+IDC;SIMAGRAN;SP;N-ExpSet;0 a 99k;;até 240k;1-19 func;RM;2 a 5;N/A
+RMJ;SIMAGRAN;SP;N-ExpSet;0 a 99k;;até 240k;1-19 func;Mun;1;N/A
+JGGA;SIMAGRAN;SP;ExpSet;0 a 99k;;até 240k;1-19 func;RM;2 a 5;EngMec
+ABR;SIMAGRAN;SP;N-ExpSet;100 a 999k;;2,4 a 10M;100-199 func;Mun;2 a 5;N/A
+AV;SIMAGRAN;SP;ExpSet;1 a 9,99M;;até 2,4M;20-99 func;RM;2 a 5;N/A
+KMF;SIMOV;MEI;N-ExpSet;0 a 99k;;;1-19 func;Mun;1;EngFlor
+EAM;SIMOV;SP;N-ExpSet;0 a 99k;;até 2,4M;20-99 func;Mun;1;N/A
+MAP;SIMOV;SP;N-ExpSet;0 a 99k;;até 2,4M;20-99 func;Mun;1;Adm
+ASA;SIMOV;SP;N-ExpSet;0 a 99k;;até 240k;1-19 func;Mun;2 a 5;Arqt
+AVD;SIMOV;SP;N-ExpSet;100 a 999k;;até 2,4M;20-99 func;Mun;1;Adm
+HJD;SIMOV;SP;ExpSet;0 a 99k;;até 2,4M;20-99 func;Mun;2 a 5;EngElet
+MPS;SIMOV;SP;ExpSet;100 a 999k;;2,4 a 10M;100-199 func;Mun;2 a 5;EngElet
+MPre;SIMPEP;SP;N-ExpSet;100 a 999k;;até 2,4M;20-99 func;RM;2 a 5;EngQuim
+DAG;SIMPEP;SP;ExpSet;1 a 9,99M;;>50M;>200 func;PR;6 a 10;Econ
+THo;SIMPEP;SP;ExpSet;1 a 9,99M;;até 2,4M;20-99 func;Reg;2 a 5;N/A
+EAAZ;SIMPEP;SP;ExpSet;1 a 9,99M;;2,4 a 10M;100-199 func;Mun;2 a 5;Econ
+RRo;SIMPEP;SP;ExpSet;1 a 9,99M;;10 a 50M;>200 func;Reg;2 a 5;EngMec
+JD;SIMPEP;SP;ExpSet;+ de 10M;;>50M;>200 func;Reg;>10;N/A
+RL;SINAEES;Adm;;;+Sul;;;;;Dir
+HU;SINAEES;SP;N-ExpSet;0 a 99k;;2,4 a 10M;100-199 func;RM;2 a 5;EngMec
+ADJ;SINAEES;Adm+SP;ExpSet;100 a 999k;KInt;até 2,4M;20-99 func;BR;2 a 5;EngElet
+II;SINAEES;SP;ExpSet;100 a 999k;+Sul;até 2,4M;20-99 func;Mun;2 a 5;EngCiv
+VMF;SINAEES;SP;ExpSet;+ de 10M;KInt;2,4 a 10M;100-199 func;PR;6 a 10;Adm
+BCM;SINCABIMA;Adm+SP;N-ExpSet;0 a 99k;;até 2,4M;20-99 func;BR;2 a 5;Dir
+Rba;SINCABIMA;Adm+SP;ExpSet;+ de 10M;;10 a 50M;>200 func;BR;2 a 5;Econ
+AlSa;SINCABIMA;SP;ExpSet;100 a 999k;;até 2,4M;20-99 func;PR;2 a 5;N/A
+RZ;SINCABIMA;SP;ExpSet;+ de 10M;;>50M;>200 func;BR;6 a 10;Adm
+DMo;SINDEMCAP;SP;N-ExpSet;0 a 99k;;;;Mun;1;N/A
+JPC;SINDEMCAP;SP;N-ExpSet;100 a 999k;;até 2,4M;20-99 func;Mun;2 a 5;N/A
+CG;SINDEMCAP;Adm+SP;ExpSet;1 a 9,99M;;10 a 50M;>200 func;PR;>10;EngMec
+LHB;SINDEMCAP;SP;ExpSet;1 a 9,99M;;até 240k;1-19 func;Mun;1;N/A
+MLRPM;SINDEMON;MEI;N-ExpSet;0 a 99k;;;1-19 func;Mun;1;N/A
+SLAB;SINDEMON;SP;N-ExpSet;0 a 99k;;até 2,4M;20-99 func;RM;2 a 5;Cont
+JJS;SINDEMON;SP;ExpSet;1 a 9,99M;;10 a 50M;>200 func;BR;6 a 10;N/A
+DF;SINDEMON;Adm+SP;ExpSet;+ de 10M;;2,4 a 10M;100-199 func;BR;6 a 10;Adm
+JCG;SINDIADUBOS;SP;N-ExpSet;1 a 9,99M;;>50M;>200 func;PR;2 a 5;Quim
+AST;SINDIADUBOS;SP;ExpSet;1 a 9,99M;+Sul;>50M;>200 func;BR;2 a 5;Agr
+CRC;SINDIADUBOS;SP;ExpSet;1 a 9,99M;+Sul;>50M;>200 func;Mun;2 a 5;Adm
+EEP;SINDIADUBOS;SP;ExpSet;+ de 10M;KInt;10 a 50M;100-199 func;BR;6 a 10;Agr
+RVG;SINDIADUBOS;SP;ExpSet;+ de 10M;KInt;10 a 50M;100-199 func;BR;>10;Adm
+AEF;SINDIADUBOS;SP;ExpSet;+ de 10M;+Sul;>50M;>200 func;BR;>10;Agr
+FN;SINDIALFA;MEI;N-ExpSet;0 a 99k;;;1-19 func;Mun;1;N/A
+TJG;SINDIALFA;MEI;N-ExpSet;0 a 99k;;;1-19 func;Mun;1;N/A
+Rbi;SINDIALFA;SP;N-ExpSet;0 a 99k;;até 240k;1-19 func;Mun;2 a 5;N/A
+OL;SINDIAVIPAR;Adm;;;KInt;;;;;N/A
+COJ;SINDIAVIPAR;Adm+SP;ExpSet;0 a 99k;;até 240k;1-19 func;Reg;2 a 5;Adm
+DM;SINDIAVIPAR;SP;ExpSet;100 a 999k;;>50M;>200 func;Reg;6 a 10;Dir
+RP;SINDIAVIPAR;Adm+SP;ExpSet;1 a 9,99M;KInt;2,4 a 10M;100-199 func;Sul;2 a 5;N/A
+RMS;SINDIBEBIDAS;Adm+SP;ExpSet;100 a 999k;KInt;até 240k;1-19 func;Mun;2 a 5;Dir
+FTV;SINDIBEBIDAS;SP;N-ExpSet;1 a 9,99M;;2,4 a 10M;100-199 func;Mun;2 a 5;EngQuim
+GZ;SINDIBEBIDAS;SP;ExpSet;+ de 10M;;>50M;>200 func;BR;>10;Adm
+GFPo;SINDICAF;N-Prop;;;;;;;;Dir
+GFP;SINDICAF;SP;ExpSet;0 a 99k;;10 a 50M;100-199 func;Sul;2 a 5;Adm
+ELJF;SINDICAF;SP;N-ExpSet;100 a 999k;;até 2,4M;20-99 func;RM;2 a 5;EngCiv
+EJV;SINDICAF;SP;ExpSet;+ de 10M;;2,4 a 10M;100-199 func;Reg;>10;EngCiv
+MP;SINDICAL;SP;N-ExpSet;0 a 99k;;até 2,4M;20-99 func;Mun;1;N/A
+MMB;SINDICAL;Adm+SP;ExpSet;+ de 10M;;>50M;>200 func;Sul;>10;Cont
+GC;SINDICAL;SP;ExpSet;1 a 9,99M;;até 2,4M;20-99 func;Mun;2 a 5;N/A
+PS;SINDICARNE;N-Prop;;;;;;;;Econ
+ASN;SINDICARNE;SP;N-ExpSet;0 a 99k;;até 2,4M;20-99 func;Reg;2 a 5;Vet
+JT;SINDICARNE;SP;N-ExpSet;0 a 99k;;10 a 50M;100-199 func;Mun;1;N/A
+EJZ;SINDICARNE;Adm+SP;ExpSet;100 a 999k;+Sul;>50M;>200 func;BR;>10;Agr
+UCB;SINDICARNE;SP;ExpSet;100 a 999k;;2,4 a 10M;100-199 func;BR;6 a 10;N/A
+AJO;SINDICER;MEI;N-ExpSet;0 a 99k;;;1-19 func;Mun;1;N/A
+AFO;SINDICER;SP;N-ExpSet;0 a 99k;;até 240k;1-19 func;Mun;1;N/A
+JDNi;SINDICER;SP;N-ExpSet;0 a 99k;;até 2,4M;20-99 func;Mun;1;N/A
+DW;SINDICER;SP;N-ExpSet;0 a 99k;;até 2,4M;20-99 func;Mun;1;N/A
+GRak;SINDICER;SP;N-ExpSet;100 a 999k;;até 2,4M;20-99 func;Mun;1;N/A
+LAR;SINDICER;SP;ExpSet;100 a 999k;;até 240k;1-19 func;Mun;2 a 5;N/A
+JPD;SINDICOSMETICOS;SP;N-ExpSet;100 a 999k;;2,4 a 10M;100-199 func;RM;2 a 5;NFP
+JCOJ;SINDICOSMETICOS;SP;ExpSet;100 a 999k;;até 2,4M;20-99 func;Mun;2 a 5;Adm
+ABS;SINDICOSMETICOS;SP;N-ExpSet;100 a 999k;;até 2,4M;20-99 func;Mun;1;Adm
+AFr;SINDICOSMETICOS;Adm+SP;ExpSet;100 a 999k;;;;Mun;1;Adm
+INC;SINDICOSMETICOS;Adm+SP;N-ExpSet;100 a 999k;;;;Mun;1;NFP
+NM;SINDICOURO;SP;N-ExpSet;0 a 99k;;até 2,4M;20-99 func;Mun;1;NFP
+WWL;SINDICOURO;SP;N-ExpSet;100 a 999k;;2,4 a 10M;100-199 func;Mun;1;NFP
+LCZ;SINDICOURO;Adm+SP;ExpSet;1 a 9,99M;;2,4 a 10M;100-199 func;Mun;2 a 5;NFP
+VV;SINDILEITE;Adm+SP;ExpSet;0 a 99k;+Sul;>50M;>200 func;BR;>10;Cont
+Rbe;SINDILEITE;Adm+SP;ExpSet;0 a 99k;;;;Mun;1;Vet
+FB;SINDILEITE;SP;ExpSet;0 a 99k;;até 2,4M;20-99 func;Sul;2 a 5;NFP
+WT;SINDILEITE;SP;ExpSet;0 a 99k;;até 240k;1-19 func;Mun;2 a 5;Agr
+MAGS;SINDILEITE;SP;ExpSet;+ de 10M;+Sul;>50M;>200 func;BR;>10;Cont
+JC;SINDILOUCAS;SP;N-ExpSet;0 a 99k;;até 240k;1-19 func;Mun;1;Dir
+EATB;SINDILOUCAS;SP;ExpSet;0 a 99k;;até 240k;1-19 func;RM;2 a 5;EngQuim
+DCAB;SINDILOUCAS;SP;ExpSet;0 a 99k;;até 240k;1-19 func;Mun;2 a 5;NFP
+AJG;SINDILOUCAS;SP;ExpSet;0 a 99k;;10 a 50M;>200 func;Mun;2 a 5;Dir
+ICN;SINDILOUCAS;SP;N-ExpSet;0 a 99k;;até 2,4M;20-99 func;Mun;1;NFP
+CBe;SINDIMETAL;SP;N-ExpSet;0 a 99k;;10 a 50M;100-199 func;Sul;2 a 5;NFP
+GL;SINDIMETAL;SP;ExpSet;0 a 99k;;10 a 50M;100-199 func;Mun;1;NFP
+JLR;SINDIMETAL;SP;ExpSet;100 a 999k;;>50M;>200 func;Reg;2 a 5;NFP
+AAT;SINDIMETAL;SP;N-ExpSet;1 a 9,99M;;10 a 50M;100-199 func;Mun;2 a 5;Adm
+DJB;SINDIMETAL;SP;ExpSet;+ de 10M;;>50M;>200 func;BR;6 a 10;NFP
+ABC;SINDIMETAL;SP;ExpSet;+ de 10M;;>50M;>200 func;PR;6 a 10;NFP
+WB;SINDIREPA;SP;N-ExpSet;0 a 99k;;até 2,4M;20-99 func;Mun;1;NFP
+SC;SINDIREPA;SP;N-ExpSet;0 a 99k;;até 240k;1-19 func;Mun;1;NFP
+RCJ;SINDIREPA;SP;N-ExpSet;0 a 99k;;2,4 a 10M;20-99 func;Mun;1;NFP
+SLM;SINDIREPA;SP;ExpSet;0 a 99k;;até 240k;1-19 func;Mun;1;NFP
+EK;SINDIREPA;SP;ExpSet;100 a 999k;;até 2,4M;20-99 func;Mun;6 a 10;NFP
+VAM;SINDITEXTIL;MEI;N-ExpSet;0 a 99k;;;1-19 func;Mun;1;NFP
+MS;SINDITEXTIL;SP;N-ExpSet;0 a 99k;;até 2,4M;20-99 func;Mun;1;Quim
+GLC;SINDITEXTIL;SP;N-ExpSet;100 a 999k;;até 240k;1-19 func;Mun;2 a 5;NFP
+PCAlb;SINDITRIGO;Adm+SP;ExpSet;1 a 9,99M;;>50M;>200 func;BR;>10;NFP
+DK;SINDITRIGO;Adm+SP;ExpSet;100 a 999k;;até 240k;1-19 func;Mun;2 a 5;Adm
+PVC;SINDITRIGO;Adm+SP;ExpSet;+ de 10M;+Sul;>50M;>200 func;BR;>10;Adm
+RCG;SINDIVEST;SP;N-ExpSet;100 a 999k;;até 2,4M;20-99 func;Mun;2 a 5;NFP
+DFG;SINDIVEST;SP;N-ExpSet;100 a 999k;;até 2,4M;20-99 func;Mun;1;NFP
+LBF;SINDIVEST;SP;ExpSet;100 a 999k;;até 2,4M;20-99 func;RM;6 a 10;Adm
+ANA;SINDIVEST;SP;ExpSet;1 a 9,99M;;até 2,4M;20-99 func;Mun;>10;Dir
+EJC;SINELTEPAR;SP;N-ExpSet;100 a 999k;;2,4 a 10M;100-199 func;Mun;2 a 5;NFP
+ENH;SINELTEPAR;SP;N-ExpSet;100 a 999k;;até 240k;1-19 func;Mun;2 a 5;EngElet
+RLB;SINELTEPAR;SP;ExpSet;100 a 999k;;até 2,4M;20-99 func;Reg;2 a 5;EngElet
+PABJ;SINELTEPAR;SP;N-ExpSet;1 a 9,99M;;2,4 a 10M;100-199 func;Mun;1;EngElet
+ARF;SINELTEPAR;SP;ExpSet;1 a 9,99M;;até 2,4M;20-99 func;Mun;1;
+RGB;SINPACEL;Adm+SP;ExpSet;100 a 999k;;até 2,4M;20-99 func;Mun;2 a 5;Adm
+DL;SINPACEL;SP;ExpSet;+ de 10M;;10 a 50M;100-199 func;RM;2 a 5;EngMec
+FWS;SINPACEL;Adm+SP;ExpSet;+ de 10M;+Sul;>50M;>200 func;BR;2 a 5;EngQuim
+CR;SINPACEL;SP;ExpSet;1 a 9,99M;;até 2,4M;20-99 func;Mun;2 a 5;NFP
+JEN;SINPACEL;SP;ExpSet;+ de 10M;;>50M;>200 func;Sul;6 a 10;EngElet
+ACan;SINPACEL;SP;ExpSet;+ de 10M;KInt;>50M;>200 func;BR;>10;Adm
+MGS;SINQFAR;Adm;;;;;;;;Econ
+MIM;SINQFAR;SP;ExpSet;0 a 99k;;;;Mun;2 a 5;Dir
+ERPR;SINQFAR;SP;ExpSet;+ de 10M;KInt;>50M;>200 func;BR;>10;Dir
+VFB;SIPCEP;SP;N-ExpSet;0 a 99k;;até 240k;1-19 func;Mun;2 a 5;NFP
+SRLS;SIPCEP;SP;N-ExpSet;0 a 99k;;até 2,4M;20-99 func;Mun;1;NFP
+DANF;SIPCEP;SP;N-ExpSet;0 a 99k;;até 2,4M;20-99 func;Mun;2 a 5;NFP
+RFGK;SIPCEP;SP;N-ExpSet;100 a 999k;;até 240k;1-19 func;Mun;1;NFP
+RJZA;SINDUSCON;Adm;;;;;;;;EngCiv
+SLCr;SINDUSCON;SP;ExpSet;100 a 999k;;até 2,4M;20-99 func;RM;2 a 5;EngCiv
+MADM;SINDUSCON;SP;ExpSet;1 a 9,99M;;10 a 50M;>200 func;RM;6 a 10;EngCiv
+TCG;SINDUSCON;SP;ExpSet;1 a 9,99M;;10 a 50M;100-199 func;Mun;2 a 5;EngCiv
+CAEC;SINDUSCON;SP;ExpSet;1 a 9,99M;;10 a 50M;100-199 func;Mun;2 a 5;EngCiv
+NBRN;SINDUSCON;SP;ExpSet;1 a 9,99M;;2,4 a 10M;100-199 func;Mun;2 a 5;EngCiv
+JCP;SINDUSCON;SP;ExpSet;+ de 10M;;10 a 50M;100-199 func;Mun;2 a 5;EngCiv
+EJJ;SINDIPINTURAS;SP;N-ExpSet;0 a 99k;;até 240k;1-19 func;Mun;1;NFP
+RMar;SINDIPINTURAS;SP;N-ExpSet;0 a 99k;;até 240k;1-19 func;Mun;2 a 5;NFP
+CEF;SINDIPINTURAS;SP;ExpSet;100 a 999k;;até 240k;1-19 func;Mun;1;NFP
+CLDG;SINDBOR;SP;N-ExpSet;0 a 99k;;;;;;NFP
+APZ;SINDBOR;SP;N-ExpSet;0 a 99k;;até 2,4M;20-99 func;Mun;1;NFP
+VA;SINDBOR;SP;N-ExpSet;100 a 999k;;2,4 a 10M;100-199 func;BR;6 a 10;NFP
+JLCJ;SINDBOR;SP;ExpSet;1 a 9,99M;;10 a 50M;100-199 func;BR;6 a 10;NFP
+FBJ;SINDIOLEOS;Adm+SP;ExpSet;0 a 99k;KInt;;;;;EngQuim
+LCF;SINDIOLEOS;SP;ExpSet;+ de 10M;KInt;2,4 a 10M;100-199 func;BR;6 a 10;NFP
+JMN;SINDIOLEOS;SP;ExpSet;+ de 10M;KInt;2,4 a 10M;100-199 func;BR;2 a 5;NFP
