@@ -1,0 +1,44 @@
+# Análise das CCTs - FALTA ANALISAR ESTA PARTE!
+CCTs <- read_csv(paste0(getwd(), "CCTs.csv")
+names(CCTs) <- c("Sind", "TxNeg", "AntRT", "Per", "Abrang", "Aum")
+CCTs$TxNeg <- as.factor(CCTs$TxNeg)
+CCTs$TxNeg <- factor(CCTs$TxNeg, levels = c(0, 1), labels = c("Não", "Sim"))
+CCTs$AntRT <- as.factor(CCTs$AntRT)
+CCTs$AntRT <- factor(CCTs$AntRT, levels = c(0, 1), labels = c("Não", "Sim"))
+CCTs$Per <- as.factor(CCTs$Per)
+CCTs$Per <- factor(CCTs$Per, levels = c(1, 2), labels = c("Anual", "Mensal"))
+CCTs$Aum <- as.factor(CCTs$Aum)
+CCTs$Aum <- factor(CCTs$Aum, levels = c(0, 1), labels = c("Não", "Sim"))
+CCTs <- as.data.frame(CCTs)
+row.names(CCTs) <- CCTs$Sind
+CCTs <- CCTs[-1]
+summary(CCTs)
+
+# Juntar e cruzar dados das CCTs e anteriores
+Merged.CCTs <- merge(sind.merge[,1:6], CCTs, by=0, all = TRUE)
+row.names(Merged.CCTs) <- Merged.CCTs$Row.names
+Merged.CCTs <- Merged.CCTs[-1]
+Merged.CCTs$TxNeg <- as.character(Merged.CCTs$TxNeg)
+Merged.CCTs$TxNeg[is.na(Merged.CCTs$TxNeg)] <- "SNC"
+Merged.CCTs$TxNeg <- as.factor(Merged.CCTs$TxNeg)
+Merged.CCTs$TxNeg <- factor(Merged.CCTs$TxNeg, levels = c("Não", "Sim", "SNC"), labels = c("Não", "Sim", "SNC"))
+
+# TABELA 11
+prop.table(table(Merged.CCTs$NivK, Merged.CCTs$TxNeg), 1)*100
+write.table(x = prop.table(table(Merged.CCTs$NivK, Merged.CCTs$TxNeg), 1)*100,
+            file = "conttable_cctxnivk.txt", sep = ",", fileEncoding = "utf8")
+
+prop.table(table(Merged.CCTs$NivK, Merged.CCTs$Aum), 1)
+prop.table(table(Merged.CCTs$RelFIEP, Merged.CCTs$Aum), 1)
+
+# TABELA 12
+prop.table(table(Merged.CCTs$RelFIEP, Merged.CCTs$TxNeg), 1)*100
+tabela_indxcct <- prop.table(table(Merged.CCTs$RelFIEP, Merged.CCTs$TxNeg), 1)*100
+write.table(tabela_indxcct, "tabela_cctxind.txt", sep = ";", fileEncoding = "utf8")
+prop.table(table(Merged.CCTs$NivK, Merged.CCTs$RelFIEP), 1)
+
+grid.table(prop.table(table(Merged.CCTs$NivEcon, Merged.CCTs$TxNeg), 1)*100)
+tapply(Merged.CCTs$nLig, Merged.CCTs$TxNeg, mean, na.rm = TRUE)
+tapply(Merged.CCTs$Dim.2, Merged.CCTs$TxNeg, mean, na.rm = TRUE)
+tapply(Merged.CCTs$Dim.1, Merged.CCTs$TxNeg, mean, na.rm = TRUE)
+write.csv2(Merged.CCTs, "merged_ccts.csv", sep = ",", fileEncoding = "utf8")
