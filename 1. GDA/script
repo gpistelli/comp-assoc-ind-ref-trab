@@ -1,0 +1,127 @@
+##### Construção da ACM 1 #####
+# Arrumando o dataset para ACM e análise geral
+library(factoextra)
+library(FactoMineR)
+library(tidyverse)
+library(gridExtra)
+
+All_dir <- read_delim("~/Dissertação/Dados/R/ACM/All_dir.csv", ";", escape_double = FALSE, trim_ws = TRUE)
+All_dir <- All_dir[, 1:10] # Vamos retirar a variavel da formacao
+dirigentes <- All_dir$Dirigente
+All_dir <- All_dir[, 2:10]
+All_dir <- as.data.frame(All_dir)
+row.names(All_dir) <- dirigentes
+All_dir$CidAt <- gsub("RM|Reg", "PR", All_dir$CidAt)
+All_dir$CidAt <- gsub("Sul", "BR", All_dir$CidAt)
+All_dir$NEmp <- gsub("6 a 10|>10", ">5", All_dir$NEmp)
+All_dir$NEmp <- ifelse(is.na(All_dir$NEmp), NA, paste(All_dir$NEmp, "Emp"))
+All_dir$FatMEmp <- ifelse(is.na(All_dir$FatMEmp), NA, paste(All_dir$FatMEmp, "Fat"))
+All_dir$FxKSoc <- ifelse(is.na(All_dir$FxKSoc), NA, paste(All_dir$FxKSoc, "KSoc"))
+All_dir[, 1:9] <- lapply(All_dir[, 1:9], as.factor)
+write.csv2(All_dir, "All_dir2.csv", fileEncoding = "utf8")
+
+# Análise exploratória dos dados
+summary(All_dir)
+prop.table(table(All_dir$TamMEmp, useNA = "ifany"))
+prop.table(table(All_dir$FxKSoc, useNA = "ifany"))
+prop.table(table(All_dir$Funcao, useNA = "ifany"))
+prop.table(table(All_dir$NEmp, useNA = "ifany"))
+prop.table(table(All_dir$FatMEmp, useNA = "ifany"))
+prop.table(table(All_dir$CidAt, useNA = "ifany"))
+prop.table(table(All_dir$ExpSet, useNA = "ifany"))
+prop.table(table(All_dir$NivK, useNA = "ifany"))
+
+# Construção da ACM
+MCAlldir <- MCA(All_dir, graph = FALSE, quali.sup = 1)
+
+# ACM 1
+fviz_mca_var(MCAlldir, repel = TRUE, geom = c("point", "text"), alpha.var = 1, col.var="contrib", gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"), col.quali.sup = "darkgreen", arrows = TRUE, ggtheme = theme_gray (), title = "ACM 1: Posição econômica dos dirigentes dos sindicatos da indústria de Curitiba")
+
+# Análises suplementares, não foram colocadas na dissertação
+facto_summarize(MCAlldir, "mca.cor", axes = 1:2)
+fviz_contrib(MCAlldir, choice = "var", axes = 1, top = 10)
+fviz_contrib(MCAlldir, choice = "var", axes = 2, top = 10)
+fviz_contrib(MCAlldir, choice = "var", axes = 3, top = 10) # Esse novos eixos são continuação da dimensão do nível de capital, então
+fviz_contrib(MCAlldir, choice = "var", axes = 4, top = 10) # não é necessário analisá-los
+fviz_screeplot(MCAlldir, addlabels = TRUE)
+
+# QUADRO 2
+All_dir[grep("SINDIADUBOS|SIMADEIRA|SIITEP|SINDIALFA|SINDICER", All_dir$Sindicato),]
+
+###### Criação dos pontos de comparação (nível econômico e independência da FIEP) #####
+
+# Seria bom encontrar um meio mais objetivo de organizar estes dados... talvez em conjunto com a análise das associações
+library(readr)
+LigSP <- read_csv("~/Dissertação/Dados/R/ACM/LigSP.csv")
+LigSP <- as.data.frame(LigSP[,1:3])
+row.names(LigSP) <- LigSP$Sind %>% gsub("É", "E", x = .) %>% gsub("Ç", "C", x = .)
+LigSP <- LigSP[-1]
+
+##### Extraindo e organizando dados da ACM ####
+Var.pos.sind <- MCAlldir$quali.sup$coor[,1:2] %>% as.data.frame()
+row.names(Var.pos.sind) <- gsub("Ç", "C", row.names(Var.pos.sind)) %>% gsub("É", "E", x = .)
+div.dim2 <- summary(Var.pos.sind$`Dim 2`)
+Var.pos.sind$NivEcon <- cut(Var.pos.sind$`Dim 2`, c(div.dim2[1]-1, div.dim2[2], 0, div.dim2[5], div.dim2[6]), c("D", "C", "B", "A"))
+
+table(Var.pos.sind$NivEcon)
+
+sind.a <- Var.pos.sind %>% filter(NivEcon == "A") %>% row.names()
+sind.b <- Var.pos.sind %>% filter(NivEcon == "B") %>% row.names()
+sind.c <- Var.pos.sind %>% filter(NivEcon == "C") %>% row.names()
+sind.d <- Var.pos.sind %>% filter(NivEcon == "D") %>% row.names()
+
+###### Análise do padrão dos estratos definidos ######
+# Criação de uma nova coluna, com o nível de capital do sindicato, para podermos comparar os níveis econômicos de seus membros
+
+All_dir$NvKSind <- gsub(paste0("^", sind.a, "$", collapse = "|"), "A", All_dir$Sindicato) %>% 
+  gsub(pattern = paste0("^", sind.b, "$", collapse = "|"), replacement = "B", x = .) %>% 
+  gsub(pattern = paste0("^", sind.c, "$", collapse = "|"), replacement = "C", x = .) %>% 
+  gsub(pattern = paste0("^", sind.d, "$", collapse = "|"), replacement = "D", x = .) %>% as.factor() %>% 
+    factor(x = ., levels = c("D", "C", "B", "A"))
+
+# Comparação das distribuições
+
+rbind(All_dir[grep(paste0("^", sind.a, "$", collapse = "|"), All_dir$Sindicato),] %>% .$NivK %>% table(),
+      All_dir[grep(paste0("^", sind.b, "$", collapse = "|"), All_dir$Sindicato),]  %>% .$NivK %>% table(),
+      All_dir[grep(paste0("^", sind.c, "$", collapse = "|"), All_dir$Sindicato),]  %>% .$NivK %>% table(),
+      All_dir[grep(paste0("^", sind.d, "$", collapse = "|"), All_dir$Sindicato),]  %>% .$NivK %>% table())
+
+All_dir$FatMEmp <- factor(All_dir$FatMEmp, levels = c("até 240k Fat", "até 2,4M Fat", "2,4 a 10M Fat", "10 a 50M Fat", ">50M Fat"), labels = c("até 240k Fat", "até 2,4M Fat", "2,4 a 10M Fat", "10 a 50M Fat", ">50M Fat"))
+rbind(All_dir[grep(paste0("^", sind.a, "$", collapse = "|"), All_dir$Sindicato),] %>% .$FatMEmp %>% table() %>% prop.table()*100,
+      All_dir[grep(paste0("^", sind.b, "$", collapse = "|"), All_dir$Sindicato),]  %>% .$FatMEmp %>% table() %>% prop.table()*100,
+      All_dir[grep(paste0("^", sind.c, "$", collapse = "|"), All_dir$Sindicato),]  %>% .$FatMEmp %>% table() %>% prop.table()*100,
+      All_dir[grep(paste0("^", sind.d, "$", collapse = "|"), All_dir$Sindicato),]  %>% .$FatMEmp %>% table() %>% prop.table()*100)
+
+All_dir$TamMEmp <- factor(All_dir$TamMEmp, levels = c("1-19 func", "20-99 func", "100-199 func", ">200 func"), labels = c("1-19 func", "20-99 func", "100-199 func", ">200 func"))
+rbind(All_dir[grep(paste0("^", sind.a, "$", collapse = "|"), All_dir$Sindicato),] %>% .$TamMEmp %>% table() %>% prop.table()*100,
+      All_dir[grep(paste0("^", sind.b, "$", collapse = "|"), All_dir$Sindicato),]  %>% .$TamMEmp %>% table() %>% prop.table()*100,
+      All_dir[grep(paste0("^", sind.c, "$", collapse = "|"), All_dir$Sindicato),]  %>% .$TamMEmp %>% table() %>% prop.table()*100,
+      All_dir[grep(paste0("^", sind.d, "$", collapse = "|"), All_dir$Sindicato),]  %>% .$TamMEmp %>% table() %>% prop.table()*100)
+
+All_dir$NEmp <- factor(All_dir$NEmp, levels = c("1 Emp", "2 a 5 Emp", ">5 Emp"))
+rbind(All_dir[grep(paste0("^", sind.a, "$", collapse = "|"), All_dir$Sindicato),] %>% .$NEmp %>% table() %>% prop.table()*100,
+      All_dir[grep(paste0("^", sind.b, "$", collapse = "|"), All_dir$Sindicato),]  %>% .$NEmp %>% table() %>% prop.table()*100,
+      All_dir[grep(paste0("^", sind.c, "$", collapse = "|"), All_dir$Sindicato),]  %>% .$NEmp %>% table() %>% prop.table()*100,
+      All_dir[grep(paste0("^", sind.d, "$", collapse = "|"), All_dir$Sindicato),]  %>% .$NEmp %>% table() %>% prop.table()*100)
+
+All_dir$CidAt <- factor(All_dir$CidAt, levels = c("Mun", "PR", "BR"))
+rbind(All_dir[grep(paste0("^", sind.a, "$", collapse = "|"), All_dir$Sindicato),] %>% .$CidAt %>% table() %>% prop.table()*100,
+      All_dir[grep(paste0("^", sind.b, "$", collapse = "|"), All_dir$Sindicato),]  %>% .$CidAt %>% table() %>% prop.table()*100,
+      All_dir[grep(paste0("^", sind.c, "$", collapse = "|"), All_dir$Sindicato),]  %>% .$CidAt %>% table() %>% prop.table()*100,
+      All_dir[grep(paste0("^", sind.d, "$", collapse = "|"), All_dir$Sindicato),]  %>% .$CidAt %>% table() %>% prop.table()*100)
+
+
+sind.nivk.tamemp <- ggplot(data = All_dir) +
+  geom_bar(mapping = aes(x = NvKSind, fill = TamMEmp), position = "fill", na.rm = T)
+
+sind.nivk.fatmemp <- ggplot(data = All_dir) +
+  geom_bar(mapping = aes(x = NvKSind, fill = FatMEmp), position = "fill", na.rm = T)
+
+sind.nivk.loc <- ggplot(data = All_dir) +
+  geom_bar(mapping = aes(x = NvKSind, fill = CidAt), position = "fill")
+
+sind.nivk.nemp <- ggplot(data = All_dir) +
+  geom_bar(mapping = aes(x = NvKSind, fill = NEmp), position = "fill", na.rm = T)
+
+# GRÁFICO 8
+grid.arrange(sind.nivk.fatmemp, sind.nivk.tamemp, sind.nivk.nemp, sind.nivk.loc, nrow = 2)
