@@ -23,7 +23,7 @@ assocs <- perf_dir2$Assoc %>% strsplit(x = ., split = ",| e ")
 assocs <- lapply(X = assocs, FUN = gsub, pattern = " ", replacement = "")
 
 # Importar nodes fiep
-nodes_fiep_ent <- read_csv("~/Dissertação/Dados/R/Social Networks/Social Network - Employers Associations/nodes_fiep_ent.csv")
+nodes_fiep_ent <- read_csv("nodes_fiep_ent.csv")
 nodes_fiep_ent$Tipo[grep("^AC(.+)|IBRAFE", nodes_fiep_ent$Ator)]  <- "ACom"
 nodes_fiep_ent$Tipo[grep("^ACSC$|^AECIC$|Itaqui", nodes_fiep_ent$Ator)] <- "AssocBairro"
 nodes_fiep_ent$Ator <- gsub("Itaqui Associacao", "Itaqui", nodes_fiep_ent$Ator)
@@ -175,8 +175,6 @@ cursos_assocs <- cursos_assocs[-1]
 #### Construção das ACMs 3 e 4 ####
 
 mca.cursos.assocs <- MCA(cursos_assocs, quali.sup = 3:8, graph = F)
-disj.table.cursos.assocs <- tab.disjonctif.prop(cursos_assocs) %>% as.data.frame()
-var.sel.cursos_assocs <- names(disj.table.cursos.assocs)[grep("y$", names(disj.table.cursos.assocs))]
 
 # ACM 4
 fviz_mca_var(mca.cursos.assocs, repel = TRUE, axes = c(3,2), 
