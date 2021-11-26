@@ -189,7 +189,7 @@ CNAE.get_from_direc_mltpg_sind2 <- function(sind){
 
 sindicatos <- list.dirs(paste0(act.wd, "/Consultasocio"))
 sindicatos <- sindicatos[-grep("Consultasocio[[:punct:]].+[[:punct:]]", sindicatos)]
-sindicatos <- gsub(paste0("C:/Users/Gabriel/Documents/Dissertação/Dados/R/ACM/Consultasocio/"), "", sindicatos)
+sindicatos <- gsub(paste0(act.wd, "/Consultasocio/"), "", sindicatos)
 sindicatos <- gsub("[[:punct:]]", "", sindicatos)
 sindicatos <- sindicatos[-1]
 
@@ -228,7 +228,8 @@ mca.cnae2 <- MCA(CNAE_data2, quali.sup = 7, graph = FALSE)
 fviz_mca_var(mca.cnae2, repel = TRUE, geom = c("point", "text"), col.var="contrib", 
              gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"), col.quali.sup = "darkgreen",
              title = "ACM 2: Atuação setorial dos dirigentes dos sindicatos da indústria de Curitiba",
-             ggtheme = theme_gray ())
+             ggtheme = theme_gray ()
+            )
 
 prop.table(table(CNAE_data2$Agric))*100
 prop.table(table(CNAE_data2$Extr))*100
@@ -239,7 +240,7 @@ prop.table(table(CNAE_data2$Serv))*100
 prop.table(table(CNAE_data2$NivKSind))*100
 
 
-#### Algumas pirações nada a ver ####
+#### Algumas análises exploratórias que não estão na dissertação ####
 
 summary(CNAE_data2[which(CNAE_data2$Sindicato == "SINPACEL"), ])
 summary(CNAE_data2[which(CNAE_data2$Sindicato == "SIMADEIRA"), ])
@@ -267,30 +268,6 @@ CNAE_data2 %>% filter(Transf == "y") %>% select(Constr) %>% table() %>% prop.tab
 
 CNAE_data2 %>% filter(Constr == "y") %>% select(Comerc) %>% table() %>% prop.table()*100
 CNAE_data2 %>% filter(Transf == "y") %>% select(Comerc) %>% table() %>% prop.table()*100
-
-summary(CNAE_data2)
-CNAE_data
-# Renomear as colunas e arrumar os dados que estiverem distantes, mas que são próximos (Indústria de transformação, por exemplo)
-
-CNAE_data_teste[,1:ncol(CNAE_data_teste)] <- lapply(CNAE_data_teste[,1:ncol(CNAE_data_teste)], as.factor)
-CNAE_data_teste <- CNAE_data_teste[,-4]
-
-mca.cnae2 <- MCA(CNAE_data2, quali.sup = 7, graph = FALSE)
-fviz_mca_var(mca.cnae2, repel = TRUE, geom = c("point", "text"), col.var="contrib", gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"), col.quali.sup = "darkgreen", ggtheme = theme_gray ())
-fviz_contrib(mca.cnae2, choice = "var", axes = 1, top = 10)
-fviz_contrib(mca.cnae2, choice = "var", axes = 2, top = 10)
-fviz_contrib(mca.cnae2, choice = "var", axes = 3, top = 10)
-fviz_screeplot(mca.cnae2, addlabels = TRUE)
-
-## Média das posições dos membros dos sindicatos
-
-facto_summarize(X = mca.cnae21, element = "mca.cor")
-cnae.ind.pos <- facto_summarize(X = mca.cnae21, element = "ind")[, 2:3]
-cnae.ind.pos <- cbind(cnae.ind.pos, CNAE_data2$Sindicato)
-names(cnae.ind.pos) <- c("Dim.1", "Dim.2", "Sind")
-cnae.ind.pos %>% filter(Sind == "SIAPAR") %>% droplevels() %>% summary()
-cnae.ind.pos %>% filter(Sind == "SIMADEIRA") %>% droplevels() %>% summary()
-cnae.ind.pos %>% filter(Sind == "SINDUSCON") %>% droplevels() %>% summary()
 
 #### Análise das variações de setores por nível econômico do sindicato ####
 
