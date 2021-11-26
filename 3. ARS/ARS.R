@@ -4,10 +4,10 @@ library(igraph)
 #### Composição do dataframe e dados iniciais ####
 
 #Primeiro, vamos importar os dados
-edges_fiep_ent <- read_csv("~/Dissertação/Dados/R/Social Networks/Social Network - Employers Associations/edges_fiep_ent.csv")
-nodes_fiep_ent <- read_csv("~/Dissertação/Dados/R/Social Networks/Social Network - Employers Associations/nodes_fiep_ent.csv")
-edges_sfiep_ent <- read_csv("~/Dissertação/Dados/R/Social Networks/Social Network - Employers Associations/edges_sfiep_ent.csv")
-nodes_sfiep_ent <- read_csv("~/Dissertação/Dados/R/Social Networks/Social Network - Employers Associations/nodes_sfiep_ent.csv")
+edges_fiep_ent <- read_csv("edges_fiep_ent.csv")
+nodes_fiep_ent <- read_csv("nodes_fiep_ent.csv")
+edges_sfiep_ent <- read_csv("edges_sfiep_ent.csv")
+nodes_sfiep_ent <- read_csv("nodes_sfiep_ent.csv")
 
 # Cálculos dos dados
 length(nodes_fiep_ent$Ator) # Número de atores
@@ -58,7 +58,7 @@ V(SN_SFIEP_ENT)$color <- ifelse(V(SN_SFIEP_ENT)$Tipo == "Outro", "grey", V(SN_SF
 V(SN_SFIEP_ENT)$size <- log(strength(SN_SFIEP_ENT)) * 4 + 3
 
 set.seed(123) # SOCIOGRAMA 2
-plot(SN_SFIEP_ENT, main = "SOCIOGRAMA 1: Sociograma das entidades nas quais os dirigentes dos sindicatos patronais
+plot(SN_SFIEP_ENT, main = "SOCIOGRAMA 2: Sociograma das entidades nas quais os dirigentes dos sindicatos patronais
      da indústria de Curitiba (2014-2019) atuaram, sem a FIEP",
      layout = layout_with_fr,
      sub = "FONTE: O autor. Legenda: Azul = Sindicatos; Amarelo = Associação; Laranja = Federação; Vermelho = Confederação; Outro = Cinza",
@@ -66,7 +66,7 @@ plot(SN_SFIEP_ENT, main = "SOCIOGRAMA 1: Sociograma das entidades nas quais os d
 
 #### Cálculos da ARS ####
 
-# Contagem de triângulos (não implementado)
+# Contagem de triângulos (não implementado na dissertação)
 sum(count_triangles(SN_FIEP_ENT))
 sum(count_triangles(SN_SFIEP_ENT))
 
