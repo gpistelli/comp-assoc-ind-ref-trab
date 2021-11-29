@@ -1,5 +1,5 @@
-# Análise das CCTs - FALTA ANALISAR ESTA PARTE!
-CCTs <- read_csv(paste0(getwd(), "CCTs.csv")
+# Análise das CCTs
+CCTs <- read_csv("CCTs.csv")
 names(CCTs) <- c("Sind", "TxNeg", "AntRT", "Per", "Abrang", "Aum")
 CCTs$TxNeg <- as.factor(CCTs$TxNeg)
 CCTs$TxNeg <- factor(CCTs$TxNeg, levels = c(0, 1), labels = c("Não", "Sim"))
