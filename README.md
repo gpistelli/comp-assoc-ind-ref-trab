@@ -1,5 +1,5 @@
 # comp-assoc-ind-ref-trab
-Dados e código da pesquisa de dissertação de mestrado "Complexo associativo da indústria e a Reforma trabalhista de 2017".
+Dados e código da pesquisa de dissertação de mestrado "Complexo associativo da indústria e a Reforma trabalhista de 2017", disponível em: https://acervodigital.ufpr.br/handle/1884/74947.
 
 ## Descrição
 Este repositório apresenta os dados, códigos e fontes utilizados para a realização da dissertação.
